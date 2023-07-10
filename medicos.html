@@ -36,7 +36,25 @@
 
     <main>
         
+        <section id="medicos">
+            <h2>Médicos <button id="novoMedico" class="btn mini-title suave">
+                <span class="suave">Novo médico</span></button>
+            </h2>
+        </section>
+
     </main>
+
+    <section id="overlay" class="suave"></section>
+    <div id="drawer" class="suave">
+        <form>
+            <h4>Criar <span>fechar</span></h4>
+            <label for="medicoNome" class="mini-title">Nome</label>
+            <input type="text" id="medicoNome" placeholder="Digite o nome do médico" required>
+            <button type="submit" class="btn full mini-title suave">
+                <span class="suave">Salvar</span>
+            </button>
+        </form>
+    </div>
 
     <script src="script.js"></script>
 </body>
