@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.mini-title {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.suave,
+.suave:hover {
+    transition: all ease 200ms;
+}
+
+:root {
+    --pink: #c81c6f;
+    --grey: #bfb6bb;
+    --dark-grey: #36393b;
+    --light: #ffffff;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+}
+
+header {
+    width: 280px;
+    background-color: var(--dark-grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+header nav .logo {
+    margin-bottom: 26px;
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--light);
+}
+
+header nav ul li a {
+    display: block;
+    line-height: 40px;
+    margin-bottom: 6px;
+    color: var(--light);
+    opacity: .7;
+}
+
+header nav ul li a:hover {
+    opacity: 1;
+}
+
+header nav ul li a.active {
+    opacity: 1;
+    color: var(--pink);
+}
+
+header .perfil {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+header .perfil .foto {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--grey);
+}
+
+header .perfil h4 {
+    flex: 1;
+    font-size: 16px;
+    color: var(--light);
+    line-height: 18px;
+}
+
+header .perfil h4 span {
+    display: block;
+    font-size: 12px;
+    color: var(--pink);
+}
+
