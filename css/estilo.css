@@ -81,12 +81,12 @@ body {
 }
 
 header {
-    width: 280px;
+    width: 250px;
     background-color: var(--dark-grey);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 16px;
 }
 
 header nav .logo {
@@ -187,7 +187,6 @@ section h2 {
 
 #drawer.active {
     right: 0;
-    
 }
 
 #drawer form {
@@ -199,6 +198,20 @@ section h2 {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 26px;
+}
+
+#drawer form h4 box-icon{
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    border-radius: 20px;
+    background-color: var(--grey);
+    cursor: pointer;
+}
+
+#drawer form h4 box-icon:hover{
+    background-color: var(--pink);
+    fill: var(--light);
 }
 
 #drawer form label {
