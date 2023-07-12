@@ -37,19 +37,34 @@
     <main>
         
         <section id="medicos">
-            <h2>Médicos <button id="novoMedico" class="btn mini-title suave">
-                <span class="suave">Novo médico</span></button>
+            <h2>Médicos 
+                <button id="novoMedico" class="btn mini-title suave">
+                    <span class="suave">Novo médico</span>
+                </button>
             </h2>
+
+                <table>
+                    <thead>
+                        <td>Nome</td>
+                        <td>Especialidades</td>
+                        <td>Ações</td>
+                    </thead>
+                    <tbody id="tabelaMedicos">
+                    
+                    </tbody>
+                </table>
         </section>
 
     </main>
 
     <section id="overlay" class="suave"></section>
     <div id="drawer" class="suave">
-        <form>
-            <h4>Criar <span>fechar</span></h4>
+        <form id="formCriar">
+            <h4>Criar <box-icon id="fecharCriar" class="suave" name='x'></box-icon></h4>
             <label for="medicoNome" class="mini-title">Nome</label>
             <input type="text" id="medicoNome" placeholder="Digite o nome do médico" required>
+            <label for="medicoEspecialidade" class="mini-title">Nome</label>
+            <input type="text" id="medicoEspecialidade" placeholder="Digite a especialidade" required>
             <button type="submit" class="btn full mini-title suave">
                 <span class="suave">Salvar</span>
             </button>
@@ -58,5 +73,6 @@
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/medicos.js"></script>
 </body>
 </html>
