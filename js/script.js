@@ -1,8 +1,3 @@
-novoMedico.onclick = function(){
-    overlay.classList.add('active');
-    drawer.classList.add('active');
-}
-
 fecharCriar.onclick = () => {
     drawer.classList.remove('active');
     setTimeout(() => {
@@ -16,3 +11,13 @@ overlay.onclick = () => {
         overlay.classList.remove('active');
     }, 700);
 }
+
+window.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape'){
+        drawer.classList.remove('active');
+    setTimeout(() => {
+        overlay.classList.remove('active');
+    }, 700);
+    }
+    console.log(e);
+})

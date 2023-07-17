@@ -16,6 +16,11 @@ let medicos = [
     },
 ];
 
+novoMedico.onclick = function(){
+    overlay.classList.add('active');
+    drawer.classList.add('active');
+}
+
 function listarMedicos() {
     tabelaMedicos.innerHTML = '';
     for(let i = 0; i < medicos.length; i++) {
@@ -35,6 +40,24 @@ function listarMedicos() {
 }
 
 listarMedicos();
+
+function listarEspecialidades() {
+
+    let especialidade = JSON.parse(localStorage.getItem('especialidades')) || [];
+    medicoEspecialidade.innerHTML = '';
+
+    if(especialidades.length === 0){
+        medicoEspecialidade.innerHTML = `
+            <option>Nenhuma especialidade cadastrada</option>
+        `;
+    } else {
+        for(let i = 0; i < especialidades.length; i++) {
+            medicoEspecialidade.innerHTML += `
+            '<option value="${especialidades[i].id}">${especialidades[i].nome}</option>
+            `;
+        }
+    }
+}
 
 function adicionarMedicos() {
     formCriar.onsubmit = function() {
