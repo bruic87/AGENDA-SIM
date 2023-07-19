@@ -43,7 +43,7 @@ listarMedicos();
 
 function listarEspecialidades() {
 
-    let especialidade = JSON.parse(localStorage.getItem('especialidades')) || [];
+    let especialidades = JSON.parse(localStorage.getItem('especialidades')) || [];
     medicoEspecialidade.innerHTML = '';
 
     if(especialidades.length === 0){
@@ -58,6 +58,8 @@ function listarEspecialidades() {
         }
     }
 }
+
+listarEspecialidades();
 
 function adicionarMedicos() {
     formCriar.onsubmit = function() {
