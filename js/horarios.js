@@ -1,3 +1,7 @@
+import { registrarEventosGlobais } from './scripts.js';
+
+registrarEventosGlobais();
+
 novoHorario.onclick = () => {
     overlay.classList.add('active');
     drawer.classList.add('active');
@@ -25,7 +29,7 @@ listarMedicos();
 
 let horarios = JSON.parse(localStorage.getItem('horarios')) || [];
 
-const diasSemanaMap = {
+const diaSemanaMap = {
     "1": "Segunda",
     "2": "Terça",
     "3": "Quarta",
@@ -49,38 +53,30 @@ function listarHorarios() {
             </tr>
         `;
     } else {
-        for (const horarioKey in horariosMap) {
-            const horario = horariosMap[horarioKey];
+        for (const horarioKey in horarioMap) {
+            const horario = horarioMap[horarioKey];
             const horariosAgrupados = horarios.filter((horario) => horario.horario == horarioKey);
+            const linha = document.createElement('tr');
             for (const diaSemanaKey in diaSemanaMap) {
-                const diaSemana = diasSemanaMap[diaSemanaKey];
-                horariosAgrupados.find((horario) => horario.diaSemana == diaSemanaKey)
+                const diaSemana = diaSemanaMap[diaSemanaKey];
+                const consultaDoDia = horariosAgrupados.find((horario) => horario.diaSemana == diaSemanaKey);
                 console.log(consultaDoDia);
                 if (consultaDoDia) {
                     linha.innerHTML += `
-                    <td>${consultaDoDia.medico}</td>
-                    `;
+                        <td>
+                            ${horarioMap[horarioKey]} - ${consultaDoDia.medico}
+                            <box-icon class="suave" name='trash' onClick="deletarHorario(${consultaDoDia.id})"></box-icon>
+                        </td>
+                `;
                 } else {
                     linha.innerHTML += `
-                    <td>-</td>
+                        <td>-</td>
                     `;
                 }
-            console.log(diasSemanaMap);             
-        };
 
-        for (let i = 0; i < horarios.length; i++) {
-            tabelaHorarios.innerHTML += `
-                <tr>
-                    <td>${horarios[i].medico}</td>
-                    <td>${horarios[i].diaSemana}</td>
-                    <td>${horarios[i].diaSemana}</td>
-                    <td>
-                        <div>
-                            <box-icon class="suave" name='trash' onClick="deletarHorario(${horarios[i].id})"></box-icon>
-                        </div>
-                    </td>
-                </tr>
-                `;
+                console.log(diaSemana);
+                tabelaHorarios.appendChild(linha);
+            }
         }
     }
 }
@@ -112,4 +108,4 @@ function deletarHorario(id) {
             listarHorarios();
         }
     }
-};
+}
